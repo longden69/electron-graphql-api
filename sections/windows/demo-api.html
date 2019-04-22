@@ -1,0 +1,43 @@
+<style>
+
+</style>
+<template class="task-template">
+    <section id="demo-api-section" class="section js-section u-category-windows">
+        <header class="section-header">
+            <div class="section-wrapper">
+                <h1>
+                    <svg class="section-icon">
+                        <use xlink:href="assets/img/icons.svg#icon-windows"></use>
+                    </svg>
+                    Demo Api
+                </h1>
+            </div>
+        </header>
+
+        <div class="demo">
+            <div class="demo-wrapper">
+<!--                                <button id="new-window-crashes-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process crashes-->
+<!--                                    <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>-->
+<!--                                </button>-->
+<!--                <div class="demo-box">-->
+                    <div class="demo-controls">
+                        <button class="demo-button" id="button-api">View Demo</button>
+                        <span id="demo-api-result"></span>
+                        <span id="error-api-demo"></span>
+                    </div>
+<!--                    <p>In this demo we create a new window (via the <code>remote</code> module) and provide a link that-->
+<!--                        will force a crash using <code>process.crash()</code>.</p>-->
+<!--                    <p>The window is listening for the crash event and when the event occurs it prompts the user with-->
+<!--                        two options: reload or close.</p>-->
+
+<!--                    <h5>Renderer Process</h5>-->
+                    <pre><code data-path="renderer-process/windows/demo-api.js"></code></pre>
+<!--                </div>-->
+            </div>
+        </div>
+        <script type="text/javascript">
+          require('./renderer-process/windows/demo-api')
+        </script>
+
+    </section>
+</template>

@@ -1,0 +1,44 @@
+<template class="task-template">
+    <section id="country-api-section" class="section js-section u-category-windows">
+        <header class="section-header">
+            <div class="section-wrapper">
+                <h1>
+                    <svg class="section-icon">
+                        <use xlink:href="assets/img/icons.svg#icon-windows"></use>
+                    </svg>
+                    Demo Api
+                </h1>
+            </div>
+        </header>
+
+        <div class="demo">
+            <div class="demo-wrapper">
+                <div class="demo-controls">
+                    <button class="demo-button" id="button-call-country-api">Call api</button>
+                    <span id="error-country-api-demo"></span>
+                </div>
+                <br>
+                <div class="control-param">
+                    <label><input type="checkbox" name="id" id="country-id" class="checkbox-control">Id</label>
+                    <label><input type="checkbox" name="name" id="country-name" class="checkbox-control">Name</label>
+                    <label><input type="checkbox" name="code" id="country-code" class="checkbox-control">Code</label>
+                </div>
+                <p id="full-country-url">http://localhost/ganesh/api/web/v2/my?query=query multiObject{countries{id,name,code}}</p>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <h5>query</h5>
+                        <pre class="box-code" id="demo-country-api-query"></pre>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>response</h5>
+                        <pre class="box-code" id="demo-country-api-result"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+          require('./renderer-process/windows/country-api')
+        </script>
+
+    </section>
+</template>

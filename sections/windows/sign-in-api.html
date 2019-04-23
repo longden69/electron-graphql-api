@@ -1,0 +1,53 @@
+<template class="task-template">
+    <section id="sign-in-api-section" class="section js-section u-category-windows">
+        <header class="section-header">
+            <div class="section-wrapper">
+                <h1>
+                    <svg class="section-icon">
+                        <use xlink:href="assets/img/icons.svg#icon-windows"></use>
+                    </svg>
+                    Demo Api
+                </h1>
+            </div>
+        </header>
+
+        <div class="demo">
+            <div class="demo-wrapper">
+                <div class="demo-controls">
+                    <button class="demo-button" id="button-call-sign-in-api">Call api</button>
+                    <span id="error-sign-in-api-demo"></span>
+                </div>
+                <br>
+                <div class="col-md-12 control-param">
+                    <div class="col-md-6">
+                        <label>email</label>
+                        <div class="input-box">
+                            <input type="text" name="si-email">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>password</label>
+                        <div class="input-box">
+                            <input type="text" name="si-password">
+                        </div>
+                    </div>
+                </div>
+                <p id="full-sign-in-url"></p>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <h5>query</h5>
+                        <pre class="box-code" id="demo-sign-in-api-query"></pre>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>response</h5>
+                        <pre class="box-code" id="demo-sign-in-api-result"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+          require('./renderer-process/windows/sign-in-api')
+        </script>
+
+    </section>
+</template>

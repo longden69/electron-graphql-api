@@ -1,5 +1,5 @@
 <template class="task-template">
-    <section id="demo-api-section" class="section js-section u-category-windows">
+    <section id="gender-api-section" class="section js-section u-category-windows">
         <header class="section-header">
             <div class="section-wrapper">
                 <h1>
@@ -14,28 +14,25 @@
         <div class="demo">
             <div class="demo-wrapper">
                 <div class="demo-controls">
-                    <button class="demo-button" id="button-api">View Demo</button>
-                    <span id="demo-api-result"></span>
-                    <span id="error-api-demo"></span>
+                    <button class="demo-button" id="button-call-gender-api">Call api</button>
+                    <span id="error-gender-api-demo"></span>
                 </div>
-                <p>In this demo we create a new window (via the <code>remote</code> module) and provide a link that
-                    will force a crash using <code>process.crash()</code>.</p>
-                <div class="" style="">
+                <br>
+                <p>http://192.168.1.16/ganesh/api/web/v2/user/genders</p>
+                <div class="col-md-12">
                     <div class="col-md-6">
                         <h5>query</h5>
-                        <pre><code
-                                data-path="renderer-process/windows/demo-api.js"></code></pre>
+                        <pre class="box-code" id="demo-gender-api-query"></pre>
                     </div>
                     <div class="col-md-6">
                         <h5>response</h5>
-                        <pre><code
-                                data-path="renderer-process/windows/demo-api.js"></code></pre>
+                        <pre class="box-code" id="demo-gender-api-result"></pre>
                     </div>
                 </div>
             </div>
         </div>
         <script type="text/javascript">
-          require('./renderer-process/windows/demo-api')
+          require('./renderer-process/windows/gender-api')
         </script>
 
     </section>

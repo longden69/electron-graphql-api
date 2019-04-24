@@ -4,6 +4,8 @@ var myConsole = new nodeConsole.Console(process.stdout, process.stderr)
 var $ = window.jQuery = require('jquery')
 
 const btnAction = document.getElementById('button-call-country-api')
+const btnActionCustom = document.getElementById('button-call-custom-country-api')
+let rootUrl = $('#root-url-input').val()
 
 btnAction.addEventListener('click', (event) => {
   let str = ''
@@ -14,14 +16,18 @@ btnAction.addEventListener('click', (event) => {
   let query = {
     query: 'query multiObject{countries{' + str + '}}'
   }
-  let fullUrl = 'http://192.168.1.16/ganesh/api/web/v2/my' + '?query=' + query.query
+  let fullUrl = rootUrl + '?query=' + query.query
   document.getElementById('demo-country-api-query').innerHTML = JSON.stringify(query, null, 4)
-  document.getElementById('full-country-url').innerHTML = fullUrl
-  callApi(query)
+  $('#full-country-url').val(fullUrl)
+  callApi(fullUrl)
+})
+
+btnActionCustom.addEventListener('click', (event) => {
+  callApi($('#full-country-url').val())
 })
 
 function callApi (queryParamString) {
-  axios.get('http://192.168.1.16/ganesh/api/web/v2/my', {
+  axios.get(queryParamString, {
     params: queryParamString
   })
     .then(res => {

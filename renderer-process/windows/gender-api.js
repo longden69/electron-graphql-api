@@ -9,6 +9,7 @@ btnAction.addEventListener('click', (event) => {
 })
 
 function callApi () {
+  $('#full-gender-url').val('http://192.168.1.16/ganesh/api/web/v2/user/genders')
   axios.get('http://192.168.1.16/ganesh/api/web/v2/user/genders')
     .then(res => {
       myConsole.log(res)

@@ -15,32 +15,42 @@
             <div class="demo-wrapper">
                 <div class="demo-controls">
                     <button class="demo-button" id="button-call-sign-in-api">Call api</button>
+                    <button class="demo-button" id="button-call-sign-in-custom-api">Call custom api</button>
                     <span id="error-sign-in-api-demo"></span>
                 </div>
                 <br>
                 <div class="col-md-12 control-param">
+                    <h3>Params</h3>
                     <div class="col-md-6">
-                        <label>email</label>
+                        <label>Email</label>
                         <div class="input-box">
-                            <input type="text" name="si-email">
+                            <input class="form-control" type="text" name="si-email">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label>password</label>
+                        <label>Password</label>
                         <div class="input-box">
-                            <input type="text" name="si-password">
+                            <input class="form-control" type="text" name="si-password">
                         </div>
                     </div>
+                    <hr>
                 </div>
-                <p id="full-sign-in-url"></p>
+                <div class="col-md-12">
+                    <label>Full url</label>
+                    <input class="form-control" type="text" id="full-sign-in-url-input"/>
+                </div>
+                <div class="col-md-12">
+                    <label for="">Demo url</label>
+                    <input type="text" readonly id="full-sign-in-url" class="form-control">
+                </div>
                 <div class="col-md-12">
                     <div class="col-md-6">
-                        <h5>query</h5>
-                        <pre class="box-code" id="demo-sign-in-api-query"></pre>
+                        <h5>Query</h5>
+                        <textarea class="box-code form-control" id="demo-sign-in-api-query"></textarea>
                     </div>
                     <div class="col-md-6">
-                        <h5>response</h5>
-                        <pre class="box-code" id="demo-sign-in-api-result"></pre>
+                        <h5>Response</h5>
+                        <textarea class="box-code form-control" id="demo-sign-in-api-result"></textarea>
                     </div>
                 </div>
             </div>

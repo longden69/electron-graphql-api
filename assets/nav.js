@@ -1,4 +1,6 @@
 const settings = require('electron-settings')
+var nodeConsole = require('console')
+var myConsole = new nodeConsole.Console(process.stdout, process.stderr)
 
 document.body.addEventListener('click', (event) => {
   if (event.target.dataset.section) {
@@ -60,17 +62,21 @@ function hideAllSectionsAndDeselectButtons () {
   })
 }
 
-function displayAbout () {
-  document.querySelector('#about-modal').classList.add('is-shown')
-}
+// function displayAbout () {
+//   document.querySelector('#about-modal').classList.add('is-shown')
+// }
 
 // Default to the view that was active the last time the app was open
-const sectionId = settings.get('activeSectionButtonId')
-if (sectionId) {
-  showMainContent()
-  const section = document.getElementById(sectionId)
-  if (section) section.click()
-} else {
-  activateDefaultSection()
-  displayAbout()
-}
+// const sectionId = settings.get('activeSectionButtonId')
+// if (sectionId) {
+//   showMainContent()
+//   const section = document.getElementById(sectionId)
+//   if (section) section.click()
+// } else {
+//   activateDefaultSection()
+//   displayAbout()
+// }
+
+showMainContent()
+const section = document.getElementById('button-windows')
+if (section) section.click()

@@ -40,7 +40,13 @@
       <h1 class="nav-title">Electron <strong>API Demos</strong></h1>
       <svg class="nav-header-icon"><use xlink:href="assets/img/icons.svg#icon-electron"></use></svg>
     </header>
-
+    
+    <div class="nav-item u-category-windows root-url-box">
+      <h3>Root url</h3>
+      <div class="col-md-12">
+        <input type="text" class="form-control" id="root-url-input" value="http://192.168.1.16/ganesh/api/web/v2/my" />
+      </div>
+    </div>
     <div class="nav-item u-category-windows">
       <h5 class="nav-category">
         <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
@@ -54,9 +60,12 @@
     </div>
 
     <footer class="nav-footer">
+      <button type="button" id="button-about" data-modal="about" class="nav-footer-button">About</button>
+      <a class="nav-footer-logo" href="https://github.com" aria-label="Homepage">
+        <svg class="nav-footer-icon"><use xlink:href="assets/img/icons.svg#icon-love"></use></svg>
+      </a>
     </footer>
   </nav>
-
   <main class="content js-content"></main>
 
   <script>

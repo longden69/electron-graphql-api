@@ -1,22 +1,32 @@
 const axios = require('axios')
+var $ = window.jQuery = require('jquery')
 var nodeConsole = require('console')
 var myConsole = new nodeConsole.Console(process.stdout, process.stderr)
-var $ = window.jQuery = require('jquery')
+
+let rootUrl = $('#root-url-input').val()
 
 const btnAction = document.getElementById('button-call-sign-up-api')
+const btnActionCustom = document.getElementById('button-call-sign-up-custom-api')
 
 btnAction.addEventListener('click', (event) => {
+  rootUrl = $('#root-url-input').val()
+
   let email = $('input[name=\'su-email\']').val()
   let password = $('input[name=\'su-password\']').val()
   let firstName = $('input[name=\'su-first-name\']').val()
   let surname = $('input[name=\'su-surname\']').val()
   let gender = parseInt($('select[name=\'su-gender\']').val(), 10)
   let country = $('input[name=\'su-country\'] option:selected').val()
-  let querry = 'mutation signUp{signUp(email: "' + email + '", password: "' + password + '",first_name:"' + firstName + '",surname:"' + surname + '",gender:' + gender + ',country:"' + country + '") { id,token email}}'
-  let fullUrl = 'http://192.168.1.16/ganesh/api/web/v2/my?query=mutation signUp{signUp(email: "' + email + '", password: "' + password + '",first_name:"' + firstName + '",surname:"' + surname + '",gender:' + gender + ',country:"' + country + '") { id,token email}}'
-  document.getElementById('full-sign-up-url').innerHTML = fullUrl
-  document.getElementById('demo-sign-up-api-query').innerHTML = querry
+
+  let query = 'mutation signUp{signUp(email: "' + email + '", password: "' + password + '",first_name:"' + firstName + '",surname:"' + surname + '",gender:' + gender + ',country:"' + country + '") { id,token email}}'
+  let fullUrl = rootUrl + '?query=mutation signUp{signUp(email: "' + email + '", password: "' + password + '",first_name:"' + firstName + '",surname:"' + surname + '",gender:' + gender + ',country:"' + country + '") { id,token email}}'
+  $('#full-sign-up-url-input').val(fullUrl)
+  document.getElementById('demo-sign-up-api-query').innerHTML = query
   callApi(fullUrl)
+})
+
+btnActionCustom.addEventListener('click', (event) => {
+  callApi($('#full-sign-up-url-input').val())
 })
 
 function callApi (urlString) {
@@ -27,7 +37,8 @@ function callApi (urlString) {
 }
 
 // call first time
-let paramsAll = 'http://192.168.1.16/ganesh/api/web/v2/my?query=mutation signUp{signUp(email: "dao.hunter@gmail.com", password: "123456",first_name:"Bui",surname:"Dao",gender:1,country:"12343") { id,token email}}'
+let paramsAll = rootUrl + '?query=mutation signUp{signUp(email: "dao.hunter@gmail.com", password: "123456",first_name:"Bui",surname:"Dao",gender:1,country:"12343") { id,token email}}'
 callApi(paramsAll)
-document.getElementById('full-sign-up-url').innerHTML = paramsAll
+$('#full-sign-up-url').val(paramsAll)
+$('#full-sign-up-url-input').val(paramsAll)
 document.getElementById('demo-sign-up-api-query').innerHTML = 'mutation signUp{signUp(email: "dao.hunter@gmail.com", password: "123456",first_name:"Bui",surname:"Dao",gender:1,country:"12343") { id,token email}}'

@@ -1,7 +1,7 @@
 /* Nav */
 
 .nav {
-  width: 200px;
+  width: 300px;
   overflow-x: hidden;
   overflow-y: auto;
   color: var(--color-subtle);
@@ -146,4 +146,8 @@
 /* Remove border on the logo */
 .nav-footer-logo.nav-footer-logo {
   border-bottom: none;
+}
+
+.root-url-box {
+  padding: 5px 2rem;
 }
